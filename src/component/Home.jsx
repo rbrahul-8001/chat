@@ -5,17 +5,26 @@ import { BsPaperclip } from 'react-icons/bs';
 import { CiMicrophoneOn } from 'react-icons/ci';
 import { IoSend } from 'react-icons/io5';
 import Feed from './Feed';
-import fetchfromapi from '../utils/fetchfromapi';
+import fetchfromapi2 from '../utils/fetchfromapi2';
 
 const Home = () => {
     const [searchTerm, setSearchTerm] = useState('');
+    const [userMessages, setUserMessages] = useState([]);
+    const [botMessages, setBotMessages] = useState([]);
 
-    const onhandleSubmit = (e) => {
+    const onhandleSubmit = async (e) => {
         e.preventDefault();
-        // fetchfromapi(searchTerm)
-        console.log(searchTerm)
+        // console.log(searchTerm)
+        // const response = await fetchfromapi2(searchTerm);
+
+        setUserMessages([...userMessages, searchTerm]);
+        // setBotMessages([...botMessages, response ]);
+
+        console.log('User Messages:', userMessages);
+        console.log('Bot Messages:', botMessages);
+
+        setSearchTerm("")
     };
-    fetchfromapi()
     return (
         <div className='bg-mid h-screen w-screen p-4 flex'>
             {/* Text Generator */}
@@ -45,7 +54,7 @@ const Home = () => {
 
             {/* Mainkam */}
             <div className='pr-24'>
-                <Feed />
+                 <Feed userMessages={userMessages} botMessages={botMessages} />
             </div>
 
             {/* Searching */}
