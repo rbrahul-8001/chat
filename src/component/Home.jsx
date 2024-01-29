@@ -5,7 +5,7 @@ import { BsPaperclip } from 'react-icons/bs';
 import { CiMicrophoneOn } from 'react-icons/ci';
 import { IoSend } from 'react-icons/io5';
 import Feed from './Feed';
-import fetchfromapi2 from '../utils/fetchfromapi2';
+//import fetchfromapi2 from '../utils/fetchfromapi2';
 
 const Home = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -30,7 +30,7 @@ const Home = () => {
             {/* Text Generator */}
             <div className='flex-none w-1/6 pr-4 fixed'>
                 <div className=''>
-                    <h1 className='text-white text-3xl mb-4'>Text Generator</h1>
+                    <h1 className='text-white text-3xl mb-4'>AI Generator</h1>
                 </div>
 
                 {/* newdiv */}
